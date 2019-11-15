@@ -8,6 +8,7 @@ Each function will output the initial state and the iridophore array, even if it
 """
 
 import numpy as np
+from math import floor
 
 
 #  A note on the arrays:

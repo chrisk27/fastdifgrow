@@ -11,3 +11,34 @@ import numpy as np
 
 
 def row_up1_array(row, col):
+    """This function establishes an array that contains the index for the row above each entry"""
+    up1_array = np.zeros((row, col), dtype=np.uint8)
+    for i in range(row):
+        up1_array[i, :] = np.ones(col, dtype = np.uint8) * ((i - 1) % row)
+    return up1_array
+
+
+def row_down1_array(row, col):
+    """This function establishes an array that contains the index for the row below each entry"""
+    down1_array = np.zeros((row, col), dtype=np.uint8)
+    for i in range(row):
+        down1_array[i, :] = np.ones(col, dtype = np.uint8) * ((i + 1) % row)
+    return down1_array
+
+
+def col_left1_array(row, col):
+    """This function establishes an array that contains the index for the column left of each entry"""
+    left1_array = np.zeros((row, col), dtype=np.uint8)
+    for j in range(col):
+        left1_array[:, j] = np.ones(row, dtype = np.uint8) * ((j - 1) % col)
+    return left1_array
+
+def col_right1_array(row, col):
+    right1_array = np.zeros((row, col), dtype=np.uint8)
+    for j in range(col):
+        right1_array[:, j] = np.ones(row, dtype = np.uint8) * ((j + 1) % col)
+    return right1_array
+
+
+def calc4neighbors(row, col):
+    return
