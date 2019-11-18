@@ -8,6 +8,7 @@ The output of each function is the matrix that corresponds to the right type of 
 """
 
 import numpy as np
+import pandas as pd  # For visualizing in interactive console
 
 
 def row_up1_array(row, col):
@@ -34,6 +35,7 @@ def col_left1_array(row, col):
     return left1_array
 
 def col_right1_array(row, col):
+    """This function establishes an array that contains the index for the column left of each entry"""
     right1_array = np.zeros((row, col), dtype=np.uint8)
     for j in range(col):
         right1_array[:, j] = np.ones(row, dtype = np.uint8) * ((j + 1) % col)
@@ -41,4 +43,9 @@ def col_right1_array(row, col):
 
 
 def calc4neighbors(row, col):
-    return
+    """This function calculates all 4 of the neighbor arrays, so it's easier to write into main code"""
+    up1 = row_up1_array(row, col)
+    down1 = row_down1_array(row, col)
+    left1 = col_left1_array(row, col)
+    right1 = col_right1_array(row, col)
+    return up1, down1, left1, right1
